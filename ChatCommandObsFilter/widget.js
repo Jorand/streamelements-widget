@@ -6,6 +6,7 @@
 let fieldData;
 const obs = new OBSWebSocket();
 let audio = new Audio('{audio}');
+let cooldownTimer = 0;
 
 let checkPrivileges = (data) => {
     let required = fieldData.privileges;
@@ -41,6 +42,9 @@ const startListener = () => {
         //if(args[0] != ""){fieldData.source =  args[0];}
         //if(typeof args[1] != undefined){fieldData.scene =  args[1];}
         //if(typeof args[2] != undefined && Number.isInteger(parseInt(args[2]))){fieldData.duration =  args[2];}
+
+        if (Date.now() < cooldownTimer + fieldData.cooldown * 1000) return;
+        cooldownTimer = Date.now();
 
         audio.play();
 

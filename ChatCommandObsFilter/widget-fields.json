@@ -42,7 +42,13 @@
     "type": "text",
     "label": "Command name",
     "value": "!cam1",
-    "group": "Source"
+    "group": "Command"
+  },
+  "cooldown": {
+    "type": "number",
+    "label": "Cooldown (sec)",
+    "value": 5,
+    "group": "Command"
   },
   "source": {
     "type": "text",
