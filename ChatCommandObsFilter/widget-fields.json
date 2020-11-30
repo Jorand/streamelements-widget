@@ -7,7 +7,7 @@
   },
   "port": {
     "type": "number",
-    "label": "Port number:",
+    "label": "Port number",
     "value": 4444,
     "step": 1,
     "group": "Global settings"
@@ -15,13 +15,13 @@
   },
   "password": {
     "type": "password",
-    "label": "OBS password:",
+    "label": "OBS password",
     "value": "",
     "group": "Global settings"
   },
   "privileges": {
     "type": "dropdown",
-    "label": "Who can change scenes:",
+    "label": "Who can change scenes",
     "value": "everybody",
     "options": {
       "everybody": "Everybody",
@@ -32,9 +32,9 @@
     },
     "group": "Global settings"
   },
-   "additionalUsers": {
+  "additionalUsers": {
     "type": "text",
-    "label": "Additional users (comma separated):",
+    "label": "Additional users (comma separated)",
     "value": "",
     "group": "Global settings"
   },
@@ -78,7 +78,7 @@
   },
   "widgetName": {
     "type": "hidden",
-    "value": "OBS Filter on Command",
+    "value": "OBS Source on Command",
     "group": "Source"
   }
 }
