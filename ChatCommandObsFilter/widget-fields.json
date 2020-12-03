@@ -21,7 +21,7 @@
   },
   "privileges": {
     "type": "dropdown",
-    "label": "Who can change scenes",
+    "label": "Who can use command ?",
     "value": "everybody",
     "options": {
       "everybody": "Everybody",
@@ -30,24 +30,30 @@
       "mods": "Mods",
       "broadcaster": "Broadcaster"
     },
-    "group": "Global settings"
+    "group": "Command"
   },
   "additionalUsers": {
     "type": "text",
     "label": "Additional users (comma separated)",
     "value": "",
-    "group": "Global settings"
+    "group": "Command"
   },
   "command": {
     "type": "text",
     "label": "Command name",
-    "value": "!cam1",
+    "value": "!wizz",
     "group": "Command"
   },
   "cooldown": {
     "type": "number",
     "label": "Cooldown (sec)",
     "value": 5,
+    "group": "Command"
+  },
+  "combo": {
+    "type": "number",
+    "label": "Combo Limit",
+    "value": 1,
     "group": "Command"
   },
   "source": {
@@ -64,7 +70,7 @@
   },
   "duration": {
     "type": "number",
-    "label": "Time visible (sec)",
+    "label": "Hold Duration (sec)",
     "value": 5.00,
     "group": "Source"
   },

@@ -7,6 +7,8 @@ let fieldData;
 const obs = new OBSWebSocket();
 let audio = new Audio('{audio}');
 let cooldownTimer = 0;
+let comboTimer = 0;
+let combo = 0;
 
 let checkPrivileges = (data) => {
     let required = fieldData.privileges;
@@ -44,10 +46,24 @@ const startListener = () => {
         //if(typeof args[2] != undefined && Number.isInteger(parseInt(args[2]))){fieldData.duration =  args[2];}
 
         if (Date.now() < cooldownTimer + fieldData.cooldown * 1000) return;
-        cooldownTimer = Date.now();
 
+      	combo++;
+      	if (combo >= fieldData.combo) {
+          combo = 0;
+          clearTimeout(comboTimer);
+          cooldownTimer = Date.now();
+        }
+        else {
+          clearTimeout(comboTimer);
+          comboTimer = setTimeout(function(){
+            combo = 0;
+          	cooldownTimer = 0;
+          }, fieldData.cooldown * 1000);
+        }
+
+      	audio.pause();
+        audio.currentTime = 0;
         audio.play();
-
         if (!obs._connected) return;
         obs.send('SetSourceFilterVisibility', {'sourceName':fieldData.source, 'filterName': fieldData.filter, 'filterEnabled': true});
         //obs.send('SetSceneItemProperties', {'scene-name':fieldData.scene,'item': fieldData.source,'visible': true});
