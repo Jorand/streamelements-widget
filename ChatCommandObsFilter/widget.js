@@ -45,7 +45,11 @@ const startListener = () => {
         //if(typeof args[1] != undefined){fieldData.scene =  args[1];}
         //if(typeof args[2] != undefined && Number.isInteger(parseInt(args[2]))){fieldData.duration =  args[2];}
 
-        if (Date.now() < cooldownTimer + fieldData.cooldown * 1000) return;
+        var endTime = cooldownTimer + fieldData.cooldown * 1000;
+        if (Date.now() < endTime) {
+          sayMessage(`This command is currently on cooldown, please wait ${moment(endTime).fromNow(true)}`);
+          return;
+        }
 
       	combo++;
       	if (combo >= fieldData.combo) {
@@ -61,7 +65,7 @@ const startListener = () => {
           }, fieldData.cooldown * 1000);
         }
 
-      	audio.pause();
+        audio.pause();
         audio.currentTime = 0;
         audio.play();
         if (!obs._connected) return;
@@ -73,7 +77,17 @@ const startListener = () => {
             //obs.send('SetSceneItemProperties', {'scene-name':fieldData.scene,'item': fieldData.source,'visible': false});
           }, fieldData.duration*1000);
         }
-    })
+    });
+};
+
+const sayMessage = (message) => {
+    message = encodeURIComponent(message).replace("%2F","%2525");
+    return new Promise(resolve => {
+        if (fieldData.token.length !== 24) resolve(false);
+        fetch(`https://api.jebaited.net/botMsg/${fieldData.token}/${message}`).then(response => response.text()).then((text) => {
+            resolve(true)
+        })
+    });
 };
 
 window.addEventListener('onWidgetLoad', function (obj) {

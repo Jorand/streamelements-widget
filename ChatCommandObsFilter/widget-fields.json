@@ -11,13 +11,18 @@
     "value": 4444,
     "step": 1,
     "group": "Global settings"
-
   },
   "password": {
     "type": "password",
     "label": "OBS password",
     "value": "",
     "group": "Global settings"
+  },
+  "token": {
+    "type": "text",
+    "label": "Bot Token",
+    "value": "",
+    "group": "Chat"
   },
   "privileges": {
     "type": "dropdown",
