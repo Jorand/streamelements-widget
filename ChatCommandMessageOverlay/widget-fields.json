@@ -1,0 +1,192 @@
+{
+  "privileges": {
+    "type": "dropdown",
+    "label": "Who can use command ?",
+    "value": "everybody",
+    "options": {
+      "everybody": "Everybody",
+      "subs": "Subs",
+      "vips": "VIPS",
+      "mods": "Mods",
+      "broadcaster": "Broadcaster"
+    },
+    "group": "Global settings"
+  },
+  "additionalUsers": {
+    "type": "text",
+    "label": "Additional users (comma separated)",
+    "value": "",
+    "group": "Global settings"
+  },
+  "ignoredUsers": {
+    "type": "text",
+    "label": "Ignored users (comma separated)",
+    "value": "StreamElements,OtherBot",
+    "group": "Global settings"
+  },
+  "command": {
+    "type": "text",
+    "label": "Command name",
+    "value": "!sms",
+    "group": "Global settings"
+  },
+  "formatMessage": {
+    "type": "text",
+    "label": "Message format",
+    "value": "{username}: {message}",
+    "group": "Global settings"
+  },
+  "boxVisibility": {
+    "label": "Hide command box",
+    "type": "dropdown",
+    "value": "flex",
+    "options": {
+      "none": "Yes",
+      "flex": "No"
+    },
+    "group": "Global settings"
+  },
+  "boxText": {
+    "type": "text",
+    "label": "Command box text",
+    "value": "{command}",
+    "group": "Global settings"
+  },
+  "audio": {
+    "type": "sound-input",
+    "label": "New message sound",
+    "value":"",
+    "group": "Audio"
+  },
+  "audioVolume": {
+    "type": "slider",
+    "label": "New message sound volume",
+    "min":0,
+    "max":100,
+    "value":50,
+    "group": "Audio"
+  },
+
+  "duration": {
+    "type": "number",
+    "label": "Duration (sec)",
+    "value": 10,
+    "min": 1,
+    "group": "Animation settings"
+  },
+  "transitionDuration": {
+    "type": "number",
+    "label": "Transition Duration (sec)",
+    "value": 1,
+    "group": "Animation settings"
+  },
+  "marqueeSpeed": {
+    "type": "number",
+    "label": "Marquee speed",
+    "value": 100,
+    "group": "Animation settings"
+  },
+  "marqueeGap": {
+    "type": "number",
+    "label": "Marquee Gap between segments",
+    "value": 20,
+    "group": "Animation settings"
+  },
+
+  "fontName": {
+    "type": "googleFont",
+    "label": "Font name",
+    "value": "Montserrat",
+    "group": "Text settings"
+  },
+  "enableCustomFont": {
+    "type": "checkbox",
+    "label": "Enable Custom Font",
+    "value": false,
+    "group": "Text settings"
+  },
+  "CustomFontName": {
+    "type": "text",
+    "label": "Custom Font Familly",
+    "value": "Montserrat",
+    "group": "Text settings"
+  },
+  "fontSize": {
+    "type": "number",
+    "label": "Font size",
+    "value": 24,
+    "step": 1,
+    "group": "Text settings"
+  },
+  "fontWeight": {
+    "label": "Font Weight",
+    "type": "dropdown",
+    "value": "400",
+    "options": {
+      "100": "Thin (100)",
+      "300": "Light (300)",
+      "400": "Regular (400)",
+      "500": "Medium (500)",
+      "700": "Bold (700)",
+      "900": "Black (900)"
+    },
+    "group": "Text settings"
+  },
+  "fontColor": {
+    "type": "colorpicker",
+    "label": "Font Color",
+    "value": "rgba(0,0,0,1)",
+    "group": "Text settings"
+  },
+  "messageBackgroundColor": {
+    "type": "colorpicker",
+    "label": "Message Background Color",
+    "value": "rgba(255,255,255,1)",
+    "group": "Text settings"
+  },
+  "textShadow": {
+    "type": "text",
+    "label": "Text shadow",
+    "value": "rgb(0, 0, 0) 1px 1px 1px",
+    "group": "Text settings"
+  },
+  "emoteSize": {
+    "type": "number",
+    "label": "Emote size",
+    "value": 24,
+    "group": "Text settings"
+  },
+  "boxFontColor": {
+    "type": "colorpicker",
+    "label": "Command box Font Color",
+    "value": "rgba(255,255,255,1)",
+    "group": "Text settings"
+  },
+  "boxBackgroundColor": {
+    "type": "colorpicker",
+    "label": "Command box Background Color",
+    "value": "rgba(0,0,0,1)",
+    "group": "Text settings"
+  },
+
+  "widgetName": {
+    "type": "hidden",
+    "value": "Chat SMS Overlay",
+    "group": "Global settings"
+  },
+  "widgetAuthor": {
+    "type": "hidden",
+    "value": "MoJojo",
+    "group": "Global settings"
+  },
+  "widgetVersion": {
+    "type": "hidden",
+    "value": "1.0",
+    "group": "Global settings"
+  },
+  "widgetUpdateUrl": {
+    "type": "hidden",
+    "value": "https://github.com/Jorand/streamelements-widget/",
+    "group": "Global settings"
+  }
+}
