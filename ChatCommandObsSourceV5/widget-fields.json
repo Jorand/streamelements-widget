@@ -1,0 +1,106 @@
+{
+  "ip": {
+    "type": "text",
+    "label": "OBS address IP",
+    "value": "localhost",
+    "group": "Global settings"
+  },
+  "port": {
+    "type": "number",
+    "label": "Port number",
+    "value": 4444,
+    "step": 1,
+    "group": "Global settings"
+  },
+  "password": {
+    "type": "password",
+    "label": "OBS password",
+    "value": "",
+    "group": "Global settings"
+  },
+  "token": {
+    "type": "text",
+    "label": "Bot Token",
+    "value": "",
+    "group": "Chat"
+  },
+  "privileges": {
+    "type": "dropdown",
+    "label": "Who can use command ?",
+    "value": "everybody",
+    "options": {
+      "everybody": "Everybody",
+      "subs": "Subs",
+      "vips": "VIPS",
+      "mods": "Mods",
+      "broadcaster": "Broadcaster"
+    },
+    "group": "Command"
+  },
+  "additionalUsers": {
+    "type": "text",
+    "label": "Additional users (comma separated)",
+    "value": "",
+    "group": "Command"
+  },
+  "command": {
+    "type": "text",
+    "label": "Command name",
+    "value": "!wizz",
+    "group": "Command"
+  },
+  "cooldown": {
+    "type": "number",
+    "label": "Cooldown (sec)",
+    "value": 5,
+    "group": "Command"
+  },
+  "combo": {
+    "type": "number",
+    "label": "Combo Limit",
+    "value": 1,
+    "group": "Command"
+  },
+  "scene": {
+    "type": "text",
+    "label": "Scene name",
+    "value": "",
+    "group": "Source"
+  },
+  "source": {
+    "type": "text",
+    "label": "Source name",
+    "value": "",
+    "group": "Source"
+  },
+  "duration": {
+    "type": "number",
+    "label": "Hold Duration (sec)",
+    "value": 5.00,
+    "group": "Source"
+  },
+  "audio": {
+    "type": "sound-input",
+    "label": "Alert sound",
+    "value":"",
+    "group": "Audio"
+  },
+  "audioVolume": {
+    "type": "slider",
+    "label": "Alert sound volume",
+    "min":0,
+    "max":100,
+    "value":50,
+    "group": "Audio"
+  },
+  "widgetName": {
+    "type": "hidden",
+    "value": "OBS Source on Command",
+    "group": "Source"
+  },
+  "widgetAuthor": {
+    "type": "hidden",
+    "value": "MoJojo",
+    "group": "Source"
+  }
+}

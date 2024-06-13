@@ -1,0 +1,1 @@
+## ! Deprecated ! obs websocket changed version
