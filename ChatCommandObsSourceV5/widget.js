@@ -9,9 +9,8 @@ let audio = new Audio('{audio}');
 let cooldownTimer = 0;
 let comboTimer = 0;
 let combo = 0;
-let channelName;
-
 let textContainer = document.getElementById('message-wrapper');
+let channelName;
 
 let showText = (line) => {
   textContainer.innerHTML += `<p class="text">${line}</p>`;
@@ -176,6 +175,21 @@ const sayMessage = (message) => {
     });
 };
 
+const displayScenes = async () => {
+  const sceneList = await obs.call('GetSceneList');
+  const itemList = await obs.call('GetSceneItemList', {sceneName: sceneList.currentProgramSceneName});
+  console.log(sceneList);
+  console.log(itemList);
+  showText(`Scene List:`);
+  sceneList.scenes.forEach(function (scene, index) {
+     showText(`${scene.sceneIndex}:${scene.sceneName}`);
+  });
+  showText(`Current Scene items:${sceneList.currentProgramSceneName}`);
+  itemList.sceneItems.forEach(function (item, index) {
+     showText(`${item.sceneItemId}:${item.sourceName}`);
+  });
+};
+
 window.addEventListener('onWidgetLoad', function (obj) {
     fieldData = obj.detail.fieldData;
     fieldData.additionalUsers=fieldData.additionalUsers.toLowerCase().replace(" ","").split(",");
@@ -189,6 +203,7 @@ window.addEventListener('onWidgetLoad', function (obj) {
     obs.connect(`ws://${fieldData.ip}:${fieldData.port}`, fieldData.password).then(() => {
       console.log("Connected to OBS. Starting chat listener");
       showText("Connected to OBS. Starting chat listener");
+      displayScenes();
       //startListener();
     }).catch(err => {
       console.log(err);
