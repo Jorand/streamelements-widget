@@ -5,3 +5,5 @@
 2) Provide the port and password in the Custom widget setting
 
 3) In the Custom widget setting add the name of the source and the scene
+
+Additional: go to [text](https://jebaited.net/) to get your bot token

@@ -1,4 +1,10 @@
 {
+  "test": {
+    "type": "button",
+    "label": "Test",
+    "value": "Test",
+    "group": "Test"
+  },
   "ip": {
     "type": "text",
     "label": "OBS address IP",
